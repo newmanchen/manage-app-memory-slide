@@ -6,8 +6,11 @@
 + Allocating and Reclaiming App Memory
 + Restricting App Memory
 + Switching Apps
-
-Note: This will only appear in the speaker notes window.
+---
+##Sharing Memory
++ Android does **NOT** offer swap space for memory
++ But using **[paging][http://en.wikipedia.org/wiki/Paging]** and **[memory-mapping][http://en.wikipedia.org/wiki/Memory-mapped_files]**
+++ So the only way to completely release memory from your app is to release object references you may be holding, making the memory available to the garbage collector. 
 ---
 ##How Your App Should Manage Memory
 + Use services sparingly
