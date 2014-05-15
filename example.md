@@ -22,7 +22,9 @@
 + In many places, Android shares the same dynamic RAM across processes using explicitly allocated shared memory regions (either with ashmem or gralloc). For example, window surfaces use shared memory between the app and screen compositor, and cursor buffers use shared memory between the content provider and client.
 ---
 ##Allocating and Reclaiming App Memory
-
+Here are some facts about how Android allocates then reclaims memory from your app:
++ Dalvik heap for each process is constrained to a single range but with limitation
++ PSS (Proportional Set Size) - mesurement of RAM using of your app
 ---
 ##Restricting App Memory
 + Android sets a hard limit on the heap size for each app(depends on devices)
