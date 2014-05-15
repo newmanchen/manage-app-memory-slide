@@ -25,13 +25,22 @@
 
 ---
 ##Restricting App Memory
-
++ Android sets a hard limit on the heap size for each app(depends on devices)
+```java
+ActivityManager am = (ActivityManager) context.getSystemService(Service.ACTIVITY_SERVICE);
+int memory = am.getMemoryClass(); // get heap size of an app
+```
+  + M8_UL_ATT - 192 MB
++ OutOfMemoryError will be thrown by allocating more memory when reach the limit
 ---
 ##Switching Apps
-
++ Process does not *quit* once user leaves the app
++ System keeps the process cached and for faster app switching once user returns to app
++ More information in [Processes and Threads](http://developer.android.com/guide/components/processes-and-threads.html) guide.
 ---
 ##How Your App Should Manage Memory
 + Use services sparingly
+  + 
 + Release memory when your user interface becomes hidden
 + Release memory as memory becomes tight
 + Check how much memory you should use
